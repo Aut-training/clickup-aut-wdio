@@ -1,7 +1,7 @@
 const assert = require('assert');
 
 describe('ClickUp login', () => {
-  it('logs the user to clickUp with an invalid', () => {
+  it('should\'t log user to clickUp with an invalid password', () => {
     browser.url('https://app.clickup.com/login');
 
     $('#email-input').setValue('t3st.4cc0unt987@gmail.com');
@@ -12,7 +12,7 @@ describe('ClickUp login', () => {
     assert.strictEqual(errorMsg, 'Incorrect password for this email.');
   });
 
-  it('logs the user to clickUp', () => {
+  it('should log user to clickUp', () => {
     browser.url('https://app.clickup.com/login');
 
     $('#email-input').setValue('t3st.4cc0unt987@gmail.com');
