@@ -19,7 +19,7 @@ describe('ClickUp login', () => {
     loginPage.setEmailInput(Context.login.voidUser.email);
     loginPage.setPasswordInput(Context.login.voidUser.password);
     loginPage.submitButton.click();
-    LoginAssert.assertPasswordError();
+    LoginAssert.assertEmailError();
   });
 
   it('should log user to clickUp', () => {
