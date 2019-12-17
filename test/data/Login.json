@@ -1,0 +1,13 @@
+{
+  "user":{
+    "name": "test",
+    "email": "t3st.4cc0unt987@gmail.com",
+    "password": "T3st123456"
+  },
+
+  "voidUser":{
+    "name": "test",
+    "email": "invalid@gmail.com",
+    "password": "demoPassword"
+  }
+}
