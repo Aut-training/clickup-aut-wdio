@@ -2,6 +2,7 @@ const LoginPage = require('../pages/LoginPage');
 const DashboardPage = require('../pages/DashboardPage');
 const Context = require('../../data/Context');
 const Utils = require('../common/Utils');
+const TaskAssert = require('../asserts/Task.assert');
 
 describe('New Task', () => {
 
@@ -17,7 +18,8 @@ describe('New Task', () => {
     DashboardPage.addListButton.click();
     DashboardPage.newListButton.click();
     DashboardPage.setNewListInput(Utils.generateID() + '\n');
-    DashboardPage.setTaskName(Utils.generateID());
+    DashboardPage.setTaskName(Context.task.title);
     DashboardPage.saveTaskButton.click();
+    TaskAssert.assertTask();
   });
 });

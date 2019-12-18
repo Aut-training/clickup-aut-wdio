@@ -24,12 +24,20 @@ class DashboardPage {
     return $('.cu-list-group__name').$('.cu-editable');
   }
 
+  get newTaskButton() {
+    return $('//div[@class="cu-list-group__add ng-star-inserted"]');
+  }
+
   get taskInput() {
     return $('.cu-task-row-new__input');
   }
 
   get saveTaskButton() {
-    return $('div=Save');
+    return $('.cu-task-row-new__button.ng-star-inserted');
+  }
+
+  get taskName() {
+    return $('div.cu-task-row-main__link-text > span');
   }
 
   setNewListInput(listName) {
