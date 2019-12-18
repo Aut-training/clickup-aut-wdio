@@ -1,8 +1,6 @@
-class LoginPage {
+const BasePage = require('./BasePage');
 
-  open(url) {
-    browser.url(url);
-  }
+class LoginPage extends BasePage {
 
   get emailInput() {
     return $('#email-input');

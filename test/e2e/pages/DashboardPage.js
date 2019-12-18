@@ -1,8 +1,6 @@
-class DashboardPage {
+const BasePage = require('./BasePage');
 
-  open(url) {
-    browser.url(url);
-  }
+class DashboardPage extends BasePage {
   
   get sidebarHeader() {
     return $('.sidebar-section__name-link');
