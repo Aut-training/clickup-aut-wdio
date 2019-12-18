@@ -12,7 +12,7 @@ class LoginPage {
     return $('#password-input');
   }
 
-  get passwordErroMessage() {
+  get errorMessage() {
     return $('.cu-form__error-text');
   }
 
