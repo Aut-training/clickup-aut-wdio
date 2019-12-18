@@ -14,7 +14,6 @@ describe('New Task', () => {
   });
 
   it('should create a task', () => {
-    DashboardPage.open(Context.page.endpoints.base);
     DashboardPage.addListButton.click();
     DashboardPage.newListButton.click();
     DashboardPage.setNewListInput(Utils.generateID() + '\n');
