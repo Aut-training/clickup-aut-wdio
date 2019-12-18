@@ -1,0 +1,10 @@
+{
+  "url": "https://app.clickup.com",
+
+  "endpoints": {
+    "base": "/",
+    "login": "/login",
+    "portfolios": "/portfolios",
+    "reporting": "/reporting"
+  }
+}
