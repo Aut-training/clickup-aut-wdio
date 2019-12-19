@@ -35,11 +35,15 @@ class DashboardPage extends BasePage {
   }
 
   get taskName() {
-    return $('div.cu-task-row-main__link-text > span');
+    return $('.cu-task-row-main__link-text > span');
+  }
+
+  get snackbarMesssage() {
+    return $('//span/span[@class="toast__name-link"]');
   }
 
   get listSettingsButton() {
-    return $('//div[4]/cu2-list-details-menu');
+    return $('cu-nav-section > div > div > cu2-list-details-menu');
   }
 
   get deleteButton() {

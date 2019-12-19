@@ -16,8 +16,8 @@ describe('New Task', () => {
   after(() => {
     DashboardPage.listSettingsButton.click();
     DashboardPage.deleteButton.click();
+    DashboardPage.confirmDeleteButton.waitForExist(5000);
     DashboardPage.confirmDeleteButton.click();
-    DashboardPage.addListButton.click();
   });
 
   it('should create a task', () => {
@@ -27,5 +27,6 @@ describe('New Task', () => {
     DashboardPage.setTaskName(Context.task.title);
     DashboardPage.saveTaskButton.click();
     TaskAssert.assertTask();
+    TaskAssert.confirmationMessage();
   });
 });
