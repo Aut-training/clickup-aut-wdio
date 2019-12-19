@@ -6,11 +6,18 @@ const TaskAssert = require('../asserts/Task.assert');
 
 describe('New Task', () => {
 
-  beforeEach(() => {
+  before(() => {
     LoginPage.open(Context.page.endpoints.login);
     LoginPage.setEmailInput(Context.login.user.email);
     LoginPage.setPasswordInput(Context.login.user.password);
     LoginPage.submitButton.click();
+  });
+
+  after(() => {
+    DashboardPage.listSettingsButton.click();
+    DashboardPage.deleteButton.click();
+    DashboardPage.confirmDeleteButton.click();
+    DashboardPage.addListButton.click();
   });
 
   it('should create a task', () => {

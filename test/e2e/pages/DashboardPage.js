@@ -38,6 +38,30 @@ class DashboardPage extends BasePage {
     return $('div.cu-task-row-main__link-text > span');
   }
 
+  get listSettingsButton() {
+    return $('//div[4]/cu2-list-details-menu');
+  }
+
+  get deleteButton() {
+    return $('[cutooltip="Delete"]');
+  }
+
+  get confirmDeleteButton() {
+    return $('.cu-btn.cu-btn_danger');
+  }
+
+  get boardTab() {
+    return $('div=Board');
+  }
+
+  get taskCard() {
+    return $('.cu-panel-board__clickable-name');
+  }
+
+  get completeColum() {
+    return $('div[data-status="complete"]');
+  }
+
   setNewListInput(listName) {
     this.newListInput.setValue(listName);
   }
