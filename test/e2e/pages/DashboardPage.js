@@ -66,6 +66,10 @@ class DashboardPage extends BasePage {
     return $('div[data-status="complete"]');
   }
 
+  get taskCloseIcon() {
+    return $('.task-close');
+  }
+
   setNewListInput(listName) {
     this.newListInput.setValue(listName);
   }
