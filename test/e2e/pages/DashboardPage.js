@@ -47,7 +47,7 @@ class DashboardPage extends BasePage {
   }
 
   get deleteButton() {
-    return $('[cutooltip="Delete"]');
+    return $('//a[@cutooltip=\'Delete\']');
   }
 
   get confirmDeleteButton() {
