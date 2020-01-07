@@ -1,9 +1,10 @@
 class BasePage{
 
-  open(url) {
+  open(url: string) {
     browser.maximizeWindow();
     browser.url(url);
   }
+  
 }
 
 module.exports = BasePage;

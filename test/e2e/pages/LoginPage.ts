@@ -1,6 +1,9 @@
-const BasePage = require('./BasePage');
+class LoginPage {
 
-class LoginPage extends BasePage {
+  open(url: string) {
+    browser.maximizeWindow();
+    browser.url(url);
+  }
 
   get emailInput() {
     return $('#email-input');
@@ -18,11 +21,11 @@ class LoginPage extends BasePage {
     return $('#login-submit');
   }
 
-  setEmailInput(emailInput) {
+  setEmailInput(emailInput: string) {
     this.emailInput.setValue(emailInput);
   }
 
-  setPasswordInput(passwordInput) {
+  setPasswordInput(passwordInput: string) {
     this.passwordInput.setValue(passwordInput);
   }
 }

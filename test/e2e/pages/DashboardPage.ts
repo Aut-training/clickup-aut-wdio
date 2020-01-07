@@ -1,7 +1,10 @@
-const BasePage = require('./BasePage');
-
-class DashboardPage extends BasePage {
+class DashboardPage {
   
+  open(url: string) {
+    browser.maximizeWindow();
+    browser.url(url);
+  }
+
   get sidebarHeader() {
     return $('.sidebar-section__name-link');
   }
@@ -70,10 +73,10 @@ class DashboardPage extends BasePage {
     return $('.task-close');
   }
 
-  setNewListInput(listName) {
+  setNewListInput(listName: string) {
     this.newListInput.setValue(listName);
   }
-  setTaskName(taskName) {
+  setTaskName(taskName: string) {
     this.taskInput.setValue(taskName);
   }
 }
