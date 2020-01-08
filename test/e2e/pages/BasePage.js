@@ -1,4 +1,4 @@
-class BasePage{
+class BasePage {
 
   open(url) {
     browser.maximizeWindow();
