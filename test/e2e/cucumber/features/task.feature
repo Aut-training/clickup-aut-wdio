@@ -25,6 +25,8 @@ Feature: Create Task
     |card3TD  |card3IP      |card3C   |
     |card4TD  |card4IP      |card4C   |
     |card5TD  |card5IP      |card5C   |
+    |card6TD  |card6IP      |card6C   |
+    |card7TD  |card7IP      |card7C   |
     Then the following tasks should be created:
     |TO_DO    |IN_PROGRESS  |COMPLETE |
     |card1TD  |card1IP      |card1C   |
@@ -32,3 +34,5 @@ Feature: Create Task
     |card3TD  |card3IP      |card3C   |
     |card4TD  |card4IP      |card4C   |
     |card5TD  |card5IP      |card5C   |
+    |card6TD  |card6IP      |card6C   |
+    |card7TD  |card7IP      |card7C   |

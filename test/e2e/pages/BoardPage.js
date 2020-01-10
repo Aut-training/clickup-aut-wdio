@@ -22,9 +22,17 @@ class BoardPage {
   get completeTaskTitle() {
     return $('(//div[@class=\'cu-panel-board__clickable-name\'])[2]');
   }
+
+  get statusNameInput() {
+    return $('//input[@placeholder=\'STATUS NAME\']');
+  }
   
   createTaskButton(index) {
     return $(`(//div[contains(@class, 'cu-panel-board__plus')])[${index}]`);
+  }
+
+  setStatusNameInput(statusName) {
+    this.statusNameInput.setValue(statusName);
   }
 
 }

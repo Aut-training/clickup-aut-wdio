@@ -43,10 +43,10 @@ When('user closes the first task', function () {
 When('user creates {string} board', function (boardName) {
   DashboardPage.setTaskName('      ');
   DashboardPage.boardTab.click();
-  DashboardPage.addStatusButton.waitForExist(3000);
   DashboardPage.addStatusButton.click();
-  browser.keys(boardName);
+  BoardPage.setStatusNameInput(boardName);
   browser.keys('\uE007');
+  browser.pause(500);
   DashboardPage.confirmNewStatus.click();
 });
 
@@ -54,7 +54,7 @@ When('user creates tasks in the following order:', function (dataTable) {
   let tasks = dataTable.hashes();
   for(let i = 0; i < tasks.length; i++) {
     BoardPage.createTaskButton(1).click();
-    browser.keys(tasks[i].COMPLETE);
+    TaskPage.setTaskNameInput(tasks[i].COMPLETE);
     browser.keys('\uE007');
     browser.pause(500);
     TaskPage.taskTitle.moveTo();
@@ -62,5 +62,4 @@ When('user creates tasks in the following order:', function (dataTable) {
   }
   Utils.tasksFromTable(tasks, 'TO_DO');
   Utils.tasksFromTable(tasks, 'IN_PROGRESS');
-  browser.pause(3000);
 });

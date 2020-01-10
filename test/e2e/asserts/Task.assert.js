@@ -3,12 +3,18 @@ const TaskPage = require('../pages/TaskPage');
 const DashboardPage = require('../pages/DashboardPage');
 const SystemLabels = require('../constants/SystemLabels.constant');
 const SystemMessages = require('../constants/SystemMessages.constatnt');
+const BoardPage = require('../pages/BoardPage');
 
 class LoginAssert {
   assertTask() {
     assert.equal(
       DashboardPage.taskName.getText(),
       SystemLabels.TASK_NAME);
+  }
+
+  taskInBoard(taskName1, taskName2) {
+    assert.equal(BoardPage.toDoTaskTitle.getText(), taskName1);
+    assert.equal(BoardPage.completeTaskTitle.getText(), taskName2);
   }
 
   confirmationMessage() {
@@ -18,7 +24,9 @@ class LoginAssert {
   }
 
   assertTaskExist(title) {
-    assert.exists(TaskPage.getTaskTitle(title).isExisting(), 'the task has been created.');
+    assert.isTrue(
+      TaskPage.getTaskTitle(title).isExisting(),
+      `Task: ${title} was not created.`);
   }
 }
 
