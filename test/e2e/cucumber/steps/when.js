@@ -56,8 +56,7 @@ When('user creates tasks in the following order:', function (dataTable) {
     BoardPage.createTaskButton(1).click();
     browser.keys(tasks[i].COMPLETE);
     browser.keys('\uE007');
-
-    TaskPage.taskTitle.waitForExist(3000);
+    browser.pause(500);
     TaskPage.taskTitle.moveTo();
     TaskPage.closeTaskIcon.click();
   }

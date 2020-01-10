@@ -24,4 +24,5 @@ Given('user navigates to {string}', function (endpoint) {
 
 Given('user is in the main page', function () {
   LoginPage.open(Context.page.endpoints.base);
+  browser.deleteCookies();
 });

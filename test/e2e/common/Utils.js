@@ -9,6 +9,7 @@ function generateID() {
 
 function tasksFromTable(hashedTable, key) {
   BoardPage.createTaskButton(1).click();
+  browser.pause(50);
   for(let i = 0; i < hashedTable.length; i++) {
     key == 'TO_DO' ? browser.keys(hashedTable[i].TO_DO) :
       browser.keys(hashedTable[i].IN_PROGRESS);
