@@ -55,7 +55,7 @@ class DashboardPage extends BasePage {
   }
 
   get boardTab() {
-    return $('div=Board');
+    return $('//a/div[contains(., "Board")]');
   }
 
   get taskCard() {
@@ -68,6 +68,14 @@ class DashboardPage extends BasePage {
 
   get taskCloseIcon() {
     return $('.task-close');
+  }
+
+  get addStatusButton() {
+    return $('//div/section[contains(., "Add Status")]');
+  }
+
+  get confirmNewStatus() {
+    return $('//div[contains(text(),\'Save\')]');
   }
 
   setNewListInput(listName) {

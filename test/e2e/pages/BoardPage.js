@@ -22,6 +22,10 @@ class BoardPage {
   get completeTaskTitle() {
     return $('(//div[@class=\'cu-panel-board__clickable-name\'])[2]');
   }
+  
+  createTaskButton(index) {
+    return $(`(//div[contains(@class, 'cu-panel-board__plus')])[${index}]`);
+  }
 
 }
 
