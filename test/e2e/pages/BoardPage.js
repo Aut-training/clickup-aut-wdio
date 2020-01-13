@@ -3,6 +3,10 @@ class BoardPage {
     return $('.cu-panel-board__main-title');
   }
 
+  get completeDoBoardTask() {
+    return $('//div[@data-status="complete"]/section/cu-dashboard-board-card');
+  }
+
   get toDoBoard() {
     return $('div[data-status="to do"]');
   }

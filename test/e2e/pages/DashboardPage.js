@@ -78,6 +78,10 @@ class DashboardPage extends BasePage {
     return $('//div[contains(text(),\'Save\')]');
   }
 
+  get modalText() {
+    return $('.cu-dc__title');
+  }
+
   setNewListInput(listName) {
     this.newListInput.setValue(listName);
   }

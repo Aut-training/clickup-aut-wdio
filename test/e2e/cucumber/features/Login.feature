@@ -8,3 +8,4 @@ Feature: Login
     |nexefeb197@4tmail.com  |1234Qwert      |
     |invalid@gmail.com      |demoPassword   |
     Then user should be redirected to ClickUp's home page
+    

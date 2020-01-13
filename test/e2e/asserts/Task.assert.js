@@ -13,6 +13,7 @@ class LoginAssert {
   }
 
   taskInBoard(taskName1, taskName2) {
+    BoardPage.completeDoBoardTask.waitForExist(3000);
     assert.equal(BoardPage.toDoTaskTitle.getText(), taskName1);
     assert.equal(BoardPage.completeTaskTitle.getText(), taskName2);
   }

@@ -11,12 +11,7 @@ Then('{string} should be in TO DO board and {string} in COMPLETE board',
     TaskAsserts.taskInBoard(taskName1, taskName2);
   });
 
-Then('the following tasks should be created:', function (dataTable) {
-  let tasks = dataTable.hashes();
-  browser.pause(1000);
-  for(let i = 0; i < tasks.length; i++) {
-    TaskAsserts.assertTaskExist(tasks[i].TO_DO);
-    TaskAsserts.assertTaskExist(tasks[i].IN_PROGRESS);
-    TaskAsserts.assertTaskExist(tasks[i].COMPLETE);
-  }
+Then('the following tasks should be visible:', function (dataTable) {
+  let tasks = dataTable.raw();
+  tasks.forEach(elm => TaskAsserts.assertTaskExist(elm));
 });

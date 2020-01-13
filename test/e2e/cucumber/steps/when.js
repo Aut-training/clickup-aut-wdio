@@ -37,7 +37,6 @@ When('user closes the first task', function () {
   TaskPage.taskTitle.waitForExist(3000);
   TaskPage.taskTitle.moveTo();
   TaskPage.closeTaskIcon.click();
-  browser.pause(2000);
 });
 
 When('user creates {string} board', function (boardName) {
@@ -46,7 +45,7 @@ When('user creates {string} board', function (boardName) {
   DashboardPage.addStatusButton.click();
   BoardPage.setStatusNameInput(boardName);
   browser.keys('\uE007');
-  browser.pause(500);
+  DashboardPage.modalText.click();
   DashboardPage.confirmNewStatus.click();
 });
 
@@ -56,10 +55,29 @@ When('user creates tasks in the following order:', function (dataTable) {
     BoardPage.createTaskButton(1).click();
     TaskPage.setTaskNameInput(tasks[i].COMPLETE);
     browser.keys('\uE007');
-    browser.pause(500);
+    TaskPage.taskTitle.waitForExist(3000);
     TaskPage.taskTitle.moveTo();
     TaskPage.closeTaskIcon.click();
   }
   Utils.tasksFromTable(tasks, 'TO_DO');
   Utils.tasksFromTable(tasks, 'IN_PROGRESS');
+});
+
+When('user adds description to a given card:', function (dataTable) {
+  let desc = dataTable.hashes();
+  desc.forEach(elm => {
+    TaskPage.getTaskTitle(elm.CARD).click();
+    TaskPage.taskDescription.click();
+    TaskPage.setTaskDescription(elm.DESCRIPTION);
+    TaskPage.closeWindows.click();
+  });
+});
+
+When('user deletes the following cards:', function (dataTable) {
+  let tasks = dataTable.raw();
+  tasks.forEach(elm => {
+    TaskPage.getTaskTitle(elm).click();
+    TaskPage.taskSettingsButton.click();
+    TaskPage.deleteButton.click();
+  });
 });

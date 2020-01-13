@@ -10,11 +10,10 @@ function generateID() {
 
 function tasksFromTable(hashedTable, key) {
   BoardPage.createTaskButton(1).click();
-  for(let i = 0; i < hashedTable.length; i++) {
-    key == 'TO_DO' ? TaskPage.setTaskNameInput(hashedTable[i].TO_DO) :
-      TaskPage.setTaskNameInput(hashedTable[i].IN_PROGRESS);
+  hashedTable.forEach(elm => {
+    TaskPage.setTaskNameInput(elm[key]);
     browser.keys('\uE007');
-  }
+  });
 }
 
 module.exports = {
