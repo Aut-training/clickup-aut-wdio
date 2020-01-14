@@ -1,14 +1,17 @@
 const { Then } = require('cucumber');
-const assert = require('chai').assert;
 const LoginAssert = require('../../asserts/Login.assert');
-const BoardPage = require('../../pages/BoardPage');
+const TaskAsserts = require('../../asserts/Task.assert');
 
 Then('user should be redirected to ClickUp\'s home page', function () {
   LoginAssert.assertLogin();
 });
 
-Then('user should {string} in TO DO board and {string} in COMPLETE board',
+Then('{string} should be in TO DO board and {string} in COMPLETE board',
   function (taskName1, taskName2) {
-    assert.equal(BoardPage.toDoTaskTitle.getText(), taskName1);
-    assert.equal(BoardPage.completeTaskTitle.getText(), taskName2);
+    TaskAsserts.taskInBoard(taskName1, taskName2);
   });
+
+Then('the following tasks should be visible:', function (dataTable) {
+  let tasks = dataTable.raw();
+  tasks.forEach(elm => TaskAsserts.assertTaskExist(elm));
+});

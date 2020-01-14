@@ -3,6 +3,10 @@ class BoardPage {
     return $('.cu-panel-board__main-title');
   }
 
+  get completeDoBoardTask() {
+    return $('//div[@data-status="complete"]/section/cu-dashboard-board-card');
+  }
+
   get toDoBoard() {
     return $('div[data-status="to do"]');
   }
@@ -21,6 +25,18 @@ class BoardPage {
 
   get completeTaskTitle() {
     return $('(//div[@class=\'cu-panel-board__clickable-name\'])[2]');
+  }
+
+  get statusNameInput() {
+    return $('//input[@placeholder=\'STATUS NAME\']');
+  }
+  
+  createTaskButton(index) {
+    return $(`(//div[contains(@class, 'cu-panel-board__plus')])[${index}]`);
+  }
+
+  setStatusNameInput(statusName) {
+    this.statusNameInput.setValue(statusName);
   }
 
 }
