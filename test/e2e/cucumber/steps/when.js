@@ -4,6 +4,7 @@ const DashboardPage = require('../../pages/DashboardPage');
 const TaskPage = require('../../pages/TaskPage');
 const BoardPage = require('../../pages/BoardPage');
 const Utils = require('../../common/Utils');
+const SystemInteractions = require('../../constants/SystemInteractions');
 
 When('user fills the fields with the following information:', function (dataTable) {
   let userData = dataTable.hashes();
@@ -17,7 +18,7 @@ When('user creates {string} list', function (listName) {
   DashboardPage.addListButton.click();
   DashboardPage.newListButton.click();
   DashboardPage.setNewListInput(listName);
-  browser.keys('\uE007');
+  browser.keys(SystemInteractions.ENTER_KEY_PRESS);
 });
 
 When('user creates tasks with the following information:', function (dataTable) {
@@ -44,7 +45,7 @@ When('user creates {string} board', function (boardName) {
   DashboardPage.boardTab.click();
   DashboardPage.addStatusButton.click();
   BoardPage.setStatusNameInput(boardName);
-  browser.keys('\uE007');
+  browser.keys(SystemInteractions.ENTER_KEY_PRESS);
   DashboardPage.modalText.click();
   DashboardPage.confirmNewStatus.click();
 });
@@ -54,7 +55,7 @@ When('user creates tasks in the following order:', function (dataTable) {
   for(let i = 0; i < tasks.length; i++) {
     BoardPage.createTaskButton(1).click();
     TaskPage.setTaskNameInput(tasks[i].COMPLETE);
-    browser.keys('\uE007');
+    browser.keys(SystemInteractions.ENTER_KEY_PRESS);
     TaskPage.taskTitle.waitForExist(3000);
     TaskPage.taskTitle.moveTo();
     TaskPage.closeTaskIcon.click();
