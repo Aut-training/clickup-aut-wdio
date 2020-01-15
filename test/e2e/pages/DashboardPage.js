@@ -47,7 +47,7 @@ class DashboardPage extends BasePage {
   }
 
   get deleteButton() {
-    return $('//a[@cutooltip=\'Delete\']');
+    return $('[cutooltip="Delete"]');
   }
 
   get confirmDeleteButton() {
@@ -55,7 +55,7 @@ class DashboardPage extends BasePage {
   }
 
   get boardTab() {
-    return $('//a/div[contains(., "Board")]');
+    return $('div=Board');
   }
 
   get taskCard() {
@@ -68,18 +68,6 @@ class DashboardPage extends BasePage {
 
   get taskCloseIcon() {
     return $('.task-close');
-  }
-
-  get addStatusButton() {
-    return $('//div/section[contains(., "Add Status")]');
-  }
-
-  get confirmNewStatus() {
-    return $('//div[contains(text(),\'Save\')]');
-  }
-
-  get modalText() {
-    return $('.cu-dc__title');
   }
 
   setNewListInput(listName) {
