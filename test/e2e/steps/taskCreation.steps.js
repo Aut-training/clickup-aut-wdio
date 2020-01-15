@@ -38,6 +38,7 @@ When(/^user creates tasks with the following information$/, function (dataTable)
     DashboardPage.saveTaskButton.click();
   }
 });
+
 When(/^user clicks on BOARD tab$/, function () {
   DashboardPage.boardTab.waitForExist(3000);
   DashboardPage.boardTab.click();
