@@ -22,13 +22,11 @@ exports.config = {
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
   specs: [
-    './test/e2e/cucumber/**/*.feature'
+    './test/e2e/**/*.feature'
   ],
   cucumberOpts: {
     require: [
-      './test/e2e/cucumber/steps/given.js',
-      './test/e2e/cucumber/steps/then.js',
-      './test/e2e/cucumber/steps/when.js',
+      './test/e2e/steps/*.js',
     ],
   },
   // Patterns to exclude.

@@ -5,7 +5,7 @@ Feature: Create Task
   Scenario: User creates two tasks
     Given user is in the main page
     When user creates "sample project" list
-    And user creates tasks with the following information:
+    And user creates tasks with the following information
     |taskName   |
     |Task 1     |
     |Task 2     |
@@ -18,23 +18,23 @@ Feature: Create Task
     Given user is in the main page
     When user creates "sample project" list
     And user creates "IN PROGRESS" board
-    And user creates tasks in the following order:
+    And user creates tasks in the following order
     |TO_DO    |IN_PROGRESS  |COMPLETE |
     |card1TD  |card1IP      |card1C   |
     |card2TD  |card2IP      |card2C   |
     |card3TD  |card3IP      |card3C   |
     |card4TD  |card4IP      |card4C   |
     |card5TD  |card5IP      |card5C   |
-    And user adds description to a given card:
+    And user adds description to a given card
     |CARD     |DESCRIPTION            |
     |card4IP  |Description sample     |
     |card1TD  |Description sample     |
     |card5C   |Description sample     |
-    And user deletes the following cards:
+    And user deletes the following cards
     |card2IP  |
     |card5TD  |
     |card4C   |
-    Then the following tasks should be visible:
+    Then the following tasks should be visible
     |card1TD  |
     |card2TD  |
     |card3TD  |
