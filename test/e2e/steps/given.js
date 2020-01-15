@@ -1,7 +1,7 @@
 const { Given } = require('cucumber');
-const LoginPage = require('../../pages/LoginPage');
-const DashboardPage = require('../../pages/DashboardPage');
-const Context = require('../../../data/Context');
+const LoginPage = require('../pages/LoginPage');
+const DashboardPage = require('../pages/DashboardPage');
+const Context = require('../../data/Context');
 var { Before, After } = require('cucumber');
 
 Before('@loginHook', function () {

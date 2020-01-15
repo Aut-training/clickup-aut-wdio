@@ -1,10 +1,10 @@
 const { When } = require('cucumber');
-const LoginPage = require('../../pages/LoginPage');
-const DashboardPage = require('../../pages/DashboardPage');
-const TaskPage = require('../../pages/TaskPage');
-const BoardPage = require('../../pages/BoardPage');
-const Utils = require('../../common/Utils');
-const SystemInteractions = require('../../constants/SystemInteractions');
+const LoginPage = require('../pages/LoginPage');
+const DashboardPage = require('../pages/DashboardPage');
+const TaskPage = require('../pages/TaskPage');
+const BoardPage = require('../pages/BoardPage');
+const Utils = require('../common/Utils');
+const SystemInteractions = require('../constants/SystemInteractions');
 
 When('user fills the fields with the following information:', function (dataTable) {
   let userData = dataTable.hashes();

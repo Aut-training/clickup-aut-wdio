@@ -1,21 +1,16 @@
-const BasePage = require('./BasePage');
+class LoginPage {
 
-class LoginPage extends BasePage {
+  get emailInput() { return $('#email-input');}
 
-  get emailInput() {
-    return $('#email-input');
-  }
+  get passwordInput() { return $('#password-input');}
 
-  get passwordInput() {
-    return $('#password-input');
-  }
+  get errorMessage() { return $('.cu-form__error-text');}
 
-  get errorMessage() {
-    return $('.cu-form__error-text');
-  }
+  get submitButton() { return $('#login-submit');}
 
-  get submitButton() {
-    return $('#login-submit');
+  open(url) {
+    browser.maximizeWindow();
+    browser.url(url);
   }
 
   setEmailInput(emailInput) {

@@ -1,6 +1,7 @@
-const { Then } = require('cucumber');
 const LoginAssert = require('../../asserts/Login.assert');
 const TaskAsserts = require('../../asserts/Task.assert');
+import { assert} from 'chai';
+import { Given, When, Then } from 'cucumber';
 
 Then('user should be redirected to ClickUp\'s home page', function () {
   LoginAssert.assertLogin();
