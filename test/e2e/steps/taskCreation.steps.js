@@ -22,13 +22,13 @@ When(/^user creates "([^"]*)" list$/, function (listName) {
 });
 
 When(/^user creates "([^"]*)" board$/, function (boardName) {
-    DashboardPage.setTaskName('      ');
-    DashboardPage.boardTab.click();
-    DashboardPage.addStatusButton.click();
-    BoardPage.setStatusNameInput(boardName);
-    browser.keys(SystemInteractions.ENTER_KEY_PRESS);
-    DashboardPage.modalText.click();
-    DashboardPage.confirmNewStatus.click();
+  DashboardPage.setTaskName('      ');
+  DashboardPage.boardTab.click();
+  DashboardPage.addStatusButton.click();
+  BoardPage.setStatusNameInput(boardName);
+  browser.keys(SystemInteractions.ENTER_KEY_PRESS);
+  DashboardPage.modalText.click();
+  DashboardPage.confirmNewStatus.click();
 });
     
 When(/^user creates tasks with the following information$/, function (dataTable) {
