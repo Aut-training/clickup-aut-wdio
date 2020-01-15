@@ -20,7 +20,17 @@ When(/^user creates "([^"]*)" list$/, function (listName) {
   DashboardPage.setNewListInput(listName);
   browser.keys(SystemInteractions.ENTER_KEY_PRESS);
 });
-  
+
+When(/^user creates "([^"]*)" board$/, function (boardName) {
+    DashboardPage.setTaskName('      ');
+    DashboardPage.boardTab.click();
+    DashboardPage.addStatusButton.click();
+    BoardPage.setStatusNameInput(boardName);
+    browser.keys(SystemInteractions.ENTER_KEY_PRESS);
+    DashboardPage.modalText.click();
+    DashboardPage.confirmNewStatus.click();
+});
+    
 When(/^user creates tasks with the following information$/, function (dataTable) {
   let task = dataTable.hashes();
   for(let i = 0; i < task.length; i++) {
@@ -80,4 +90,3 @@ Then(/^the following tasks should be visible$/, function (dataTable) {
   let tasks = dataTable.raw();
   tasks.forEach(elm => TaskAsserts.assertTaskExist(elm));
 });
-      
