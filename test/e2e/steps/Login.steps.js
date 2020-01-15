@@ -1,7 +1,6 @@
-const LoginAssert = require('../../asserts/Login.assert');
-const TaskAsserts = require('../../asserts/Task.assert');
-import { assert} from 'chai';
-import { Given, When, Then } from 'cucumber';
+const LoginAssert = require('../asserts/Login.assert');
+const LoginPage = require('../pages/LoginPage');
+const { Given, When, Then } = require('cucumber');
 
 Given(/^user navigates to "([^"]*)"$/, (endpoint) => {
   LoginPage.open(endpoint);

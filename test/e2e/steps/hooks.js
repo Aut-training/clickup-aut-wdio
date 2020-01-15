@@ -1,7 +1,6 @@
-const { Given } = require('cucumber');
-const LoginPage = require('../pages/LoginPage');
-const DashboardPage = require('../pages/DashboardPage');
 const Context = require('../../data/Context');
+const DashboardPage = require('../pages/DashboardPage');
+const LoginPage = require('../pages/LoginPage');
 var { Before, After } = require('cucumber');
 
 Before('@loginHook', function () {
@@ -16,13 +15,4 @@ After('@deleteList', function () {
   DashboardPage.deleteButton.click();
   DashboardPage.confirmDeleteButton.waitForExist(3000);
   DashboardPage.confirmDeleteButton.click();
-});
-
-Given('user navigates to {string}', function (endpoint) {
-  LoginPage.open(endpoint);
-});
-
-Given('user is in the main page', function () {
-  LoginPage.open(Context.page.endpoints.base);
-  browser.deleteCookies();
 });
