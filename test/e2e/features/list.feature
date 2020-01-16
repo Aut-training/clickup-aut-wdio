@@ -1,20 +1,20 @@
-Feature: The user create a list in several ways to create a list
-    The user creates a list in several ways
+Feature: List creation
+    Forms to create a list
 
-    Scenario: The user creates a list
-        Given the user is at "/login" page
+    Scenario: The user creates a list from user's space
+        Given the user is at Dashboard page
         When the user clicks on New list option
         And the user fills-up the name of list with "New List"
         Then "New List" list should be created
 
-    Scenario: The user creates a list since creation of tasks
-        Given the user is at "/login" page
+    Scenario: The user creates a list from creation of tasks
+        Given the user is at Dashboard page
         When the user clicks on New task button
-        And the user create a new list "List since task"
-        Then "List since task" list should be created
+        And the user create a new list "List from task options"
+        Then "List from task options" list should be created
 
-    Scenario: The user creates a list within a folder
-        Given the user is at "/login" page
-        When the user clicks on the link of List tab
+    Scenario: The user creates a list from creation of a folder
+        Given the user is at Dashboard page
+        When the user clicks on List tab link
         And the user creates a new folder "List within folder"
         Then "List within folder" list should be created
