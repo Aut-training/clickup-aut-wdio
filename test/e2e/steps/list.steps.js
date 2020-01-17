@@ -28,14 +28,17 @@ When(/^the user clicks on New task button$/, function () {
 
 When(/^the user creates a new list "([^"]*)"$/, function (nameList) {
   BoardPage.searchList.click();
-  BoardPage.newListLink.waitForExist(3000);
+  BoardPage.newListLink.waitForExist(4000);
   BoardPage.newListLink.click();
   BoardPage.setNewListbySearchInput(nameList);
   browser.keys(SystemInteractions.ENTER_KEY_PRESS);
+  browser.keys(SystemInteractions.ESCAPE_KEY_PRESS);  
+  BoardPage.closePanelTask.click();
 });
 
 When(/^the user creates a new folder "([^"]*)"$/, function (nameList) {
-  BoardPage.templateLink.click();
+  BoardPage.templateLink.waitForExist(3000);
+  BoardPage.templateLink.click();  
   //Wait for 'New' button
   browser.pause(3000);
   BoardPage.newFolderTab.click();
@@ -44,7 +47,7 @@ When(/^the user creates a new folder "([^"]*)"$/, function (nameList) {
 });
 
 Then(/^"([^"]*)" list should be created$/, function (nameList) {
-  ListAssert.assertListCreation(nameList);
+  ListAssert.assertListCreation(nameList);  
 });
 
 Then(/^"([^"]*)" list should be created within the folder$/, function (nameList) {   

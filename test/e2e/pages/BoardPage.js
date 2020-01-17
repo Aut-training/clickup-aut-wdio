@@ -33,6 +33,7 @@ class BoardPage {
 
   get folderNameInput() { return $('.cu-form__input'); }
 
+  get closePanelTask() { return $('.cu-draft-view__titlebar-quick-option'); }
 
   createTaskButton(index) { return $(`(//div[contains(@class, 'cu-panel-board__plus')])[${index}]`); }
 
@@ -47,7 +48,6 @@ class BoardPage {
   setFolderInput(listName) {
     this.folderNameInput.setValue(listName);
   }
-
 }
 
 module.exports = new BoardPage();
