@@ -1,50 +1,65 @@
 class DashboardPage {
-  
-  get sidebarHeader() { return $('.sidebar-section__name-link');}
 
-  get addListButton() { return $('.sidebar-section__plus-icon');}
+  get sidebarHeader() { return $('.sidebar-section__name-link'); }
 
-  get newListButton() { return $('div=New List');}
+  get addListButton() { return $('.sidebar-section__plus-icon'); }
 
-  get newListInput() { return $('.nav-section-maker__input');}
+  get newListButton() { return $('div=New List'); }
 
-  get listHader() { return $('.cu-list-group__name').$('.cu-editable');}
+  get newListInput() { return $('.nav-section-maker__input'); }
 
-  get newTaskButton() { return $('//div[@class="cu-list-group__add ng-star-inserted"]');}
+  get listHeader() { return $('.cu-list-group__name').$('.cu-editable'); }
 
-  get taskInput() { return $('.cu-task-row-new__input');}
+  get newTaskButton() { return $('//div[@class="cu-list-group__add ng-star-inserted"]'); }
 
-  get saveTaskButton() { return $('.cu-task-row-new__button.ng-star-inserted');}
+  get taskInput() { return $('.cu-task-row-new__input'); }
 
-  get taskName() { return $('.cu-task-row-main__link-text > span');}
+  get saveTaskButton() { return $('.cu-task-row-new__button.ng-star-inserted'); }
 
-  get snackbarMesssage() { return $('//span/span[@class="toast__name-link"]');}
+  get taskName() { return $('.cu-task-row-main__link-text > span'); }
 
-  get listSettingsButton() { return $('cu-nav-section > div > div > cu2-list-details-menu');}
+  get snackbarMesssage() { return $('//span/span[@class="toast__name-link"]'); }
 
-  get deleteButton() { return $('//a[@cutooltip=\'Delete\']');}
+  get listSettingsButton() { return $('cu-nav-section > div > div > cu2-list-details-menu'); }
 
-  get confirmDeleteButton() { return $('.cu-btn.cu-btn_danger');}
+  get deleteButton() { return $('//a[@cutooltip=\'Delete\']'); }
 
-  get boardTab() { return $('//a/div[contains(., "Board")]');}
+  get confirmDeleteButton() { return $('.cu-btn.cu-btn_danger'); }
 
-  get taskCard() { return $('.cu-panel-board__clickable-name');}
+  get boardTab() { return $('//a/div[contains(., "Board")]'); }
 
-  get completeColum() { return $('div[data-status="complete"]');}
+  get taskCard() { return $('.cu-panel-board__clickable-name'); }
 
-  get taskCloseIcon() { return $('.task-close');}
+  get completeColum() { return $('div[data-status="complete"]'); }
 
-  get addStatusButton() { return $('//div/section[contains(., "Add Status")]');}
+  get taskCloseIcon() { return $('.task-close'); }
 
-  get confirmNewStatus() { return $('//div[contains(text(),\'Save\')]');}
+  get addStatusButton() { return $('//div/section[contains(., "Add Status")]'); }
 
-  get modalText() { return $('.cu-dc__title');}
+  get confirmNewStatus() { return $('//div[contains(text(),\'Save\')]'); }
+
+  get modalText() { return $('.cu-dc__title'); }
+
+  get newListIcon() { return $('.cu-dropdown-list-item__icon_new-list'); }
+
+  get nameListInFolder() { return $('.cu-list-group__name'); }
+
+  get listNameInSpace() { return $('.cu-nav-section'); }
+
+  get folderNameInput() { return $('.cu-form__input'); }
+
+  get openFolderIcon() { return $('.nav-category__toggle'); }
 
   setNewListInput(listName) {
     this.newListInput.setValue(listName);
   }
+
   setTaskName(taskName) {
     this.taskInput.setValue(taskName);
+  }
+
+  setFolderInput(listName) {
+    this.folderNameInput.setValue(listName);
   }
 }
 
