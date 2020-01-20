@@ -2,16 +2,11 @@ const { Given, When, Then } = require('cucumber');
 const LoginPage = require('../pages/LoginPage');
 const Context = require('../../data/Context');
 const DashboardPage = require('../../e2e/pages/DashboardPage');
-const Utils = require('../common/Utils');
 const TaskPage = require('../pages/TaskPage');
-const SystemInteractions = require('../constants/SystemInteractions');
+const TaskAsserts = require('../asserts/Task.assert');
 
 Given(/^user is in home page$/, function () {
   LoginPage.open(Context.page.endpoints.base);
-  DashboardPage.addListButton.click();
-  DashboardPage.newListButton.click();
-  DashboardPage.setNewListInput(Utils.generateID());
-  DashboardPage.boardTab.click();
 });
 
 When(/^user clicks "([^"]*)" option in the floating button$/, function (option) {
@@ -32,6 +27,25 @@ When(/^user creates a task with the following information$/, function (dataTable
   TaskPage.createTaskButton.click();
 });
 
-Then(/^a card should be shown$/, function (dataTable) {
-  browser.pause(5000);
+When(/^user clicks in "([^"]*)" tab$/, function (tabName) {
+  DashboardPage.dashboardTab(tabName).waitForExist();
+  DashboardPage.dashboardTab(tabName).click();
+});
+
+When(/^user clicks "([^"]*)" option in the view list header$/, function (buttonName) {
+  TaskPage.newTaskButton(buttonName).waitForExist();
+  TaskPage.newTaskButton(buttonName).click();
+});
+
+When(/^user creates the given task$/, function (dataTable) {
+  let task = dataTable.rowsHash();
+  TaskPage.setTaskNameInput(task.name);
+  TaskPage.setPriorityButton.click();
+  TaskPage.priorityOption(task.priority.toLowerCase()).click();
+  TaskPage.saveTaskButton.click();
+});
+
+Then(/^"([^"]*)" should be shown$/, function (taskName) {
+  TaskPage.getTaskTitle(taskName).waitForExist();
+  TaskAsserts.assertTaskExist(taskName);
 });

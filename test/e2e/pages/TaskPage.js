@@ -4,7 +4,7 @@ class TaskPage {
 
   get taskTitle() { return $('.cu-panel-board__clickable');}
 
-  get taskNameInput() { return $('.cu-panel-board__input');}
+  get taskNameInput() { return $('cu-slash-command > input');}
 
   get taskDescription() { return $('//div[@data-placeholder="Description or type \'/\' for commands"]');}
 
@@ -24,7 +24,9 @@ class TaskPage {
 
   get createTaskButton() { return $('.cu-draft-view__submit-btn'); }
 
-  get howClosedButton() { return $('.cu-dashboard-table__show-closed'); }
+  get showClosedButton() { return $('.cu-dashboard-table__show-closed'); }
+
+  get saveTaskButton() { return $('//div[contains(text(), \'Save\')]'); }
 
   floatingTaskStatus(status) {
     return $(`//div[@class='status-list__status'][contains(text(), '${status}')]`);
@@ -32,9 +34,11 @@ class TaskPage {
 
   priorityOption(priority) { return $(`//div[contains(text(), '${priority}')]`); }
 
-  getTaskTitle(title) { return $(`//span/div[text()='${title}']`);}
+  getTaskTitle(title) { return $(`//*[text()='${title}']`);}
 
   getListViewName(title) { return $(`//span[contains(text(), '${title}')]`); }
+  
+  newTaskButton(name) { return $(`//div[contains(text(), '${name}')]`);}
 
   setTaskNameInput(taskName) {
     this.taskNameInput.setValue(taskName);

@@ -2,7 +2,6 @@ const Context = require('../../data/Context');
 const DashboardPage = require('../pages/DashboardPage');
 const LoginPage = require('../pages/LoginPage');
 const Utils = require('../common/Utils');
-const SystemInteractions = require('../../e2e/constants/SystemInteractions');
 var { Before, After } = require('cucumber');
 
 Before('@loginHook', function () {
@@ -12,16 +11,23 @@ Before('@loginHook', function () {
   LoginPage.submitButton.click();
 });
 
-Before('@createListHook', function () {
+After('@logoutHook', function () {
+  LoginPage.profileButton.click();
+  LoginPage.logoutLink.click();
+});
+
+Before('@createList', function () {
+  DashboardPage.addListButton.moveTo();
   DashboardPage.addListButton.click();
   DashboardPage.newListButton.click();
-  DashboardPage.setNewListInput(Utils.generateID);
-  browser.keys(SystemInteractions.ENTER_KEY_PRESS);
+  DashboardPage.setNewListInput(Utils.generateID());
+  DashboardPage.boardTab.click();
 });
 
 After('@deleteList', function () {
+  DashboardPage.listSettingsButton.moveTo();
   DashboardPage.listSettingsButton.click();
   DashboardPage.deleteButton.click();
-  DashboardPage.confirmDeleteButton.waitForExist(3000);
+  browser.pause(1000);
   DashboardPage.confirmDeleteButton.click();
 });

@@ -24,10 +24,11 @@ class LoginAssert {
       SystemMessages.CREATED_TASK_MESSAGE);
   }
 
-  assertTaskExist(title) {
+  assertTaskExist(taskName) {
     assert.isTrue(
-      TaskPage.getTaskTitle(title).isExisting(),
-      `Task: ${title} was not created.`);
+      TaskPage.getTaskTitle(taskName).isExisting(),
+      `Task: ${taskName} was not created.`
+    );
   }
 }
 
