@@ -39,7 +39,7 @@ When(/^the user creates a new list "([^"]*)"$/, function (nameList) {
 When(/^the user creates a new folder "([^"]*)"$/, function (nameList) {
   BoardPage.templateLink.waitForExist(3000);
   BoardPage.templateLink.click();  
-  BoardPage.newFolderTab.waitForExist(5000);
+  BoardPage.newFolderTab.waitForClickable(5000);
   BoardPage.newFolderTab.click();
   BoardPage.setFolderInput(nameList);
   browser.keys(SystemInteractions.ENTER_KEY_PRESS);
