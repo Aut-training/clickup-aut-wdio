@@ -15,4 +15,4 @@ When(/^user fills the fields with the following information$/, (dataTable) => {
 
 Then(/^user should be redirected to ClickUp\'s home page$/, () => {
   LoginAssert.assertLogin();
-});
+}); 

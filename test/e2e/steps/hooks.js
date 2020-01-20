@@ -13,7 +13,6 @@ Before('@loginHook', function () {
 After('@deleteList', function () {
   DashboardPage.listSettingsButton.click();
   DashboardPage.deleteButton.click();
-  //Wait until button is enable
-  browser.pause(2000);
+  DashboardPage.confirmDeleteButton.waitForClickable(5000);
   DashboardPage.confirmDeleteButton.click();
 });

@@ -12,7 +12,7 @@ Given(/^user is in the main page$/, function () {
   LoginPage.open(Context.page.endpoints.base);
   browser.deleteCookies();
 });
-
+ 
 When(/^user creates "([^"]*)" list$/, function (listName) {
   DashboardPage.addListButton.waitForExist(3000);
   DashboardPage.addListButton.click();
