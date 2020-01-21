@@ -1,7 +1,7 @@
 const axios = require('axios');
 const Context = require('../../data/Context');
 
-axios.defaults.headers.common['Authorization'] = 'pk_3019064_BLEAN6XFS8D2A6HN1AOM6U3YM55U28ZF';
+axios.defaults.headers.common['Authorization'] = 'pk_4377274_YFO7D7D2NYK9Y5H9M6X7U46A9TRI6GF7';
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 
 function moveToComplete(task) {
