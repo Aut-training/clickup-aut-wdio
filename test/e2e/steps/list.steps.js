@@ -5,6 +5,7 @@ const LoginPage = require('../pages/LoginPage');
 const SystemInteractions = require('../constants/SystemInteractions');
 const ListAssert = require('../asserts/List.assert');
 const { Given, When, Then } = require('cucumber');
+// const { ReportAggregator, HtmlReporter} = require ('@rpii/wdio-html-reporter');
 
 Given(/^the user is at Dashboard page$/, function () {
   LoginPage.open(Context.page.endpoints.base);
@@ -39,7 +40,7 @@ When(/^the user creates a new list "([^"]*)"$/, function (nameList) {
 When(/^the user creates a new folder "([^"]*)"$/, function (nameList) {
   BoardPage.templateLink.waitForExist(3000);
   BoardPage.templateLink.click();  
-  BoardPage.newFolderTab.waitForClickable(5000);
+  BoardPage.newFolderTab.waitForClickable(6000);
   BoardPage.newFolderTab.click();
   BoardPage.setFolderInput(nameList);
   browser.keys(SystemInteractions.ENTER_KEY_PRESS);

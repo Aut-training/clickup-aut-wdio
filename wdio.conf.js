@@ -119,15 +119,21 @@ exports.config = {
   // Make sure you have the wdio adapter package for the specific framework installed
   // before running any tests.
   framework: 'cucumber',
-  //
+  
   // The number of times to retry the entire specfile when it fails as a whole
   // specFileRetries: 1,
   //
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter.html
-  reporters: ['spec'],
- 
+  //reporters: ['dot', 'concise'],
+
+  reporters:[['allure', {
+    outputDir: './Reports/allure-results/',
+    disableWebdriverStepsReporting: true,
+    disableWebdriverScreenshotsReporting: true,
+  }]],
+  
   //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
@@ -196,10 +202,8 @@ exports.config = {
   /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-  // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-  // },
-
-
+  //   afterTest: function(test, context, { error, result, duration, passed, retries }) {
+  //  },
   /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details
