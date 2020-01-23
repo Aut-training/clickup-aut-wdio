@@ -5,7 +5,6 @@ const LoginPage = require('../pages/LoginPage');
 const SystemInteractions = require('../constants/SystemInteractions');
 const ListAssert = require('../asserts/List.assert');
 const { Given, When, Then } = require('cucumber');
-// const { ReportAggregator, HtmlReporter} = require ('@rpii/wdio-html-reporter');
 
 Given(/^the user is at Dashboard page$/, function () {
   LoginPage.open(Context.page.endpoints.base);
