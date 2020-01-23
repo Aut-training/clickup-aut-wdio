@@ -29,6 +29,13 @@ class LoginAssert {
       TaskPage.getTaskTitle(title).isExisting(),
       `Task: ${title} was not created.`);
   }
+
+  toastMessage(message) {
+    assert.equal(
+      DashboardPage.toastText.getText(),
+      message
+    );
+  }
 }
 
 module.exports = new LoginAssert();

@@ -40,6 +40,12 @@ class DashboardPage {
 
   get modalText() { return $('.cu-dc__title');}
 
+  get floatingMenuButton() { return $('.cu-float-button__toggle'); }
+
+  get listViewHeader() { return $('cu-nav-menu>div>div>div>cu-editable'); }
+
+  get toastText() { return $('.toast__name-link-text'); }
+
   setNewListInput(listName) {
     this.newListInput.setValue(listName);
   }
