@@ -4,6 +4,7 @@ const LoginPage = require('../pages/LoginPage');
 const { Given, When, Then } = require('cucumber');
 const TaskPage = require('../pages/TaskPage');
 const DashboardPage = require('../pages/DashboardPage');
+const SystemInteractions = require('../constants/SystemInteractions');
 
 Given(/^user is in home page$/, function () {
   LoginPage.open(Context.page.endpoints.base);
@@ -29,7 +30,7 @@ When(/^user modifies "([^"]*)" fields$/, function (taskName, dataTable) {
   let elm = $('.task-name__overlay').getText().length;
   TaskPage.modalName.click();
   for(let i = 0; i < elm; i++) {
-    browser.keys('\uE003');
+    browser.keys(SystemInteractions.BACKSPACE_KEY_PRESS);
   }
   TaskPage.setModalName(task.name);
   TaskPage.modalDescription.click();
