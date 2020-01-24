@@ -17,5 +17,5 @@ Feature: List creation
 
   Scenario: The user creates a list from creation of a folder
     Given the user is at Dashboard page
-    When the user creates a new folder "List within folder"
-    Then "List" list should be created within the folder
+    When the user creates a new folder "List-within-folder"
+    Then "List" list should be created within the folder List-within-folder
