@@ -44,7 +44,6 @@ class DashboardPage {
 
   get listViewHeader() { return $('cu-nav-menu>div>div>div>cu-editable'); }
 
-  // floatingButton(index) { return $(`div > .cu-float-button-item:nth-child(${index})`); }
   floatingButton(index) { return $(`//cu-float-button-item[div/div[contains(text(), "${index}")]]`); }
 
   dashboardTab(tabName) { return $(`//a/div[contains(., "${tabName}")]`);}
