@@ -23,6 +23,6 @@ After('@deleteList', function () {
   DashboardPage.listSettingsButton.moveTo();
   DashboardPage.listSettingsButton.click();
   DashboardPage.deleteButton.click();
-  browser.pause(500);
+  DashboardPage.confirmDeleteButton.waitForClickable(5000);
   DashboardPage.confirmDeleteButton.click();
 });
