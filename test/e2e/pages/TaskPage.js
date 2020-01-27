@@ -8,7 +8,7 @@ class TaskPage {
 
   get taskDescription() { return $('//div[@data-placeholder="Description or type \'/\' for commands"]');}
 
-  get closeWindows() { return $('//div[@cutooltip="Close window"]');}
+  get closeTaskModal() { return $('//div[@cutooltip="Close window"]');}
 
   get taskSettingsButton() { return $('.cu-task-header__control');}
 
@@ -28,6 +28,12 @@ class TaskPage {
 
   get saveTaskButton() { return $('//div[contains(text(), \'Save\')]'); }
 
+  get modalName() { return $('.task-name'); }
+
+  get modalNameField() { return $('.task-name__overlay'); }
+
+  get modalDescription() { return $('.notranslate > .ql-editor > div'); }
+
   floatingTaskStatus(status) {
     return $(`//div[@class='status-list__status'][contains(text(), '${status}')]`);
   }
@@ -36,7 +42,7 @@ class TaskPage {
 
   getTaskTitle(title) { return $(`//*[text()='${title}']`);}
 
-  getListViewName(title) { return $(`//span[contains(text(), '${title}')]`); }
+  getTaskInList(title) { return $(`//span[text()='${title}']`); }
   
   newTaskButton(name) { return $(`//div[contains(text(), '${name}')]`);}
 
@@ -54,6 +60,14 @@ class TaskPage {
 
   setFloatingDescription(description) {
     this.floatingDecriptionInput.setValue(description);
+  }
+
+  setModalName(name) {
+    this.modalName.setValue(name);
+  }
+
+  setModalDescription(description) {
+    this.modalDescription.setValue(description);
   }
 
 }
