@@ -54,6 +54,7 @@ class DashboardPage {
   setTaskName(taskName) {
     this.taskInput.setValue(taskName);
   }
+
 }
 
 module.exports = new DashboardPage();

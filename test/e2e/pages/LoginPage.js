@@ -8,10 +8,6 @@ class LoginPage {
 
   get submitButton() { return $('#login-submit');}
 
-  get profileButton() { return $('cu-user-settings-menu > div > .cu-dropdown__toggle'); }
-
-  get logoutLink() { return $('//a[contains(text(), \'Log out\')]'); }
-
   open(url) {
     browser.maximizeWindow();
     browser.url(url);
