@@ -50,6 +50,10 @@ class DashboardPage {
 
   get openFolderIcon() { return $('.nav-category__toggle'); }
 
+  get floatingMenuButton() { return $('.cu-float-button__toggle'); }
+
+  get listViewHeader() { return $('cu-nav-menu>div>div>div>cu-editable'); }
+
   setNewListInput(listName) {
     this.newListInput.setValue(listName);
   }

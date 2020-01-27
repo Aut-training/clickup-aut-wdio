@@ -29,6 +29,20 @@ class LoginAssert {
       TaskPage.getTaskTitle(title).isExisting(),
       `Task: ${title} was not created.`);
   }
+
+  assertName(name) {
+    assert.equal(
+      TaskPage.modalNameField.getText(),
+      name
+    );
+  }
+
+  assertDescription(description) {
+    assert.equal(
+      TaskPage.modalDescription.getText(),
+      description
+    );
+  }
 }
 
 module.exports = new LoginAssert();

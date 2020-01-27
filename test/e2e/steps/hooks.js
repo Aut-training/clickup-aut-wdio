@@ -2,6 +2,7 @@ const Context = require('../../data/Context');
 const DashboardPage = require('../pages/DashboardPage');
 const LoginPage = require('../pages/LoginPage');
 var { Before, After } = require('cucumber');
+const Utils = require('../common/Utils');
 
 Before('@loginHook', function () {
   LoginPage.open(Context.page.endpoints.login);
@@ -10,7 +11,16 @@ Before('@loginHook', function () {
   LoginPage.submitButton.click();
 });
 
+Before('@createList', function () {
+  DashboardPage.addListButton.moveTo();
+  DashboardPage.addListButton.click();
+  DashboardPage.newListButton.click();
+  DashboardPage.setNewListInput(Utils.generateID());
+  DashboardPage.addListButton.click();
+});
+
 After('@deleteList', function () {
+  DashboardPage.listSettingsButton.moveTo();
   DashboardPage.listSettingsButton.click();
   DashboardPage.deleteButton.click();
   DashboardPage.confirmDeleteButton.waitForClickable(5000);
