@@ -37,6 +37,10 @@ class BoardPage {
 
   createTaskButton(index) { return $(`(//div[contains(@class, 'cu-panel-board__plus')])[${index}]`); }
 
+  getBoardTitle(boardName) {
+    return $(`//div[contains(@class, \'cu-panel-board__main-title\') and contains(text(), \'${boardName}\')]`);
+  }
+
   setStatusNameInput(statusName) {
     this.statusNameInput.setValue(statusName);
   }

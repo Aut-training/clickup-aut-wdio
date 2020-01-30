@@ -16,7 +16,7 @@ Feature: Create Task
   @deleteList
   Scenario: User creates tasks for each board
     Given user is in the main page
-    When user creates "sample project" list
+    When user creates "sample List" list
     And user creates "IN PROGRESS" board
     And user creates tasks in the following order
     |TO_DO    |IN_PROGRESS  |COMPLETE |

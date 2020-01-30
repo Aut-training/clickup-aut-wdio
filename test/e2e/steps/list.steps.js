@@ -49,6 +49,6 @@ Then(/^"([^"]*)" list should be created$/, function (nameList) {
   ListAssert.assertListCreation(nameList);  
 });
 
-Then(/^"([^"]*)" list should be created within the folder$/, function (nameList) {   
+Then(/^"([^"]*)" list should be created within the folder List-within-folder$/, function (nameList) {   
   ListAssert.assertListCreation(nameList);
 });

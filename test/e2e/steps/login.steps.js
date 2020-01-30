@@ -13,6 +13,6 @@ When(/^user fills the fields with the following information$/, (dataTable) => {
   LoginPage.submitButton.click();
 });
 
-Then(/^user should be redirected to ClickUp\'s home page$/, () => {
+Then(/^user should be redirected to ClickUp\'s dashboard$/, () => {
   LoginAssert.assertLogin();
 }); 

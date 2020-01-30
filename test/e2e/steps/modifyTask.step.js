@@ -12,7 +12,7 @@ Given(/^user is in home page$/, function () {
 });
 
 When(/^user creates a task$/, function (dataTable) {
-  let task = dataTable.rowsHash();
+  const task = dataTable.rowsHash();
   DashboardPage.floatingMenuButton.click();
   TaskPage.setFloatingName(task.name);
   TaskPage.setFloatingDescription(task.description);
@@ -24,23 +24,24 @@ When(/^user creates a task$/, function (dataTable) {
 });
 
 When(/^user modifies "([^"]*)" fields$/, function (taskName, dataTable) {
-  let task = dataTable.rowsHash();
-  TaskPage.getTaskInList(taskName).waitForExist(3000);
+  const task = dataTable.rowsHash();
+  TaskPage.getTaskInList(taskName).waitForExist();
+  TaskPage.getTaskInList(taskName).waitForClickable();
   TaskPage.getTaskInList(taskName).click();
-  let elm = $('.task-name__overlay').getText().length;
+  TaskPage.modalName.waitForExist();
+  TaskPage.modalName.waitForClickable();
   TaskPage.modalName.click();
-  for(let i = 0; i < elm; i++) {
-    browser.keys(SystemInteractions.BACKSPACE_KEY_PRESS);
-  }
-  TaskPage.setModalName(task.name);
+  browser.keys([SystemInteractions.CONTROL_KEY_PRESS, 'a']);
+  browser.keys(task.name);
   TaskPage.modalDescription.click();
   TaskPage.setModalDescription(task.description);
   TaskPage.closeTaskModal.click();
 });
 
 Then(/^"([^"]*)" values should be$/, function (taskName, dataTable) {
-  let task = dataTable.rowsHash();
-  TaskPage.getTaskInList(taskName).waitForExist(3000);
+  const task = dataTable.rowsHash();
+  TaskPage.getTaskInList(taskName).waitForExist();
+  TaskPage.getTaskInList(taskName).waitForClickable();
   TaskPage.getTaskInList(taskName).click();
   TaskAsserts.assertName(task.name);
   TaskAsserts.assertDescription(task.description);
