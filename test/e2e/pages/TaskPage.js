@@ -24,10 +24,6 @@ class TaskPage {
 
   get createTaskButton() { return $('.cu-draft-view__submit-btn'); }
 
-  get showClosedButton() { return $('.cu-dashboard-table__show-closed'); }
-
-  get saveTaskButton() { return $('//div[contains(text(), \'Save\')]'); }
-
   get modalName() { return $('.task-name'); }
 
   get modalNameField() { return $('.task-name__overlay'); }
@@ -40,11 +36,9 @@ class TaskPage {
 
   priorityOption(priority) { return $(`//div[contains(text(), '${priority}')]`); }
 
-  getTaskTitle(title) { return $(`//*[text()='${title}']`);}
+  getTaskTitle(title) { return $(`//span/div[text()='${title}']`); }
 
   getTaskInList(title) { return $(`//span[text()='${title}']`); }
-  
-  newTaskButton(name) { return $(`//div[contains(text(), '${name}')]`);}
 
   setTaskNameInput(taskName) {
     this.taskNameInput.setValue(taskName);

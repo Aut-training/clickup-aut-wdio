@@ -1,13 +1,7 @@
-const { Given, When, Then } = require('cucumber');
-const LoginPage = require('../pages/LoginPage');
-const Context = require('../../data/Context');
+const { When, Then } = require('cucumber');
 const DashboardPage = require('../../e2e/pages/DashboardPage');
 const TaskPage = require('../pages/TaskPage');
 const TaskAsserts = require('../asserts/Task.assert');
-
-Given(/^user is in home page$/, function () {
-  LoginPage.open(Context.page.endpoints.base);
-});
 
 When(/^user clicks "([^"]*)" option in the floating button$/, function (option) {
   DashboardPage.listViewHeader.waitForExist();

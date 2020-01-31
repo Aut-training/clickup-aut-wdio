@@ -10,11 +10,11 @@ const { Given, When, Then } = require('cucumber');
 
 Given(/^user is in the main page$/, function () {
   LoginPage.open(Context.page.endpoints.base);
-  browser.deleteCookies();
 });
-
+ 
 When(/^user creates "([^"]*)" list$/, function (listName) {
-  DashboardPage.addListButton.waitForExist(3000);
+  DashboardPage.addListButton.waitForExist();
+  DashboardPage.addListButton.moveTo();
   DashboardPage.addListButton.click();
   DashboardPage.newListButton.click();
   DashboardPage.setNewListInput(listName);
@@ -27,8 +27,10 @@ When(/^user creates "([^"]*)" board$/, function (boardName) {
   DashboardPage.addStatusButton.click();
   BoardPage.setStatusNameInput(boardName);
   browser.keys(SystemInteractions.ENTER_KEY_PRESS);
-  DashboardPage.modalText.click();
+  DashboardPage.modalDialog.waitForDisplayed();
+  DashboardPage.modalDialog.waitForClickable();
   DashboardPage.confirmNewStatus.click();
+  BoardPage.getBoardTitle(boardName.toLowerCase()).waitForExist();
 });
     
 When(/^user creates tasks with the following information$/, function (dataTable) {
@@ -40,12 +42,12 @@ When(/^user creates tasks with the following information$/, function (dataTable)
 });
 
 When(/^user clicks on BOARD tab$/, function () {
-  DashboardPage.boardTab.waitForExist(3000);
+  DashboardPage.boardTab.waitForExist();
   DashboardPage.boardTab.click();
 });
   
 When(/^user closes the first task$/, function () {
-  TaskPage.taskTitle.waitForExist(3000);
+  TaskPage.taskTitle.waitForExist();
   TaskPage.taskTitle.moveTo();
   TaskPage.closeTaskIcon.click();
 });
@@ -54,14 +56,13 @@ Then(/^"([^"]*)" should be in TO DO board and "([^"]*)" in COMPLETE board$/, fun
   TaskAsserts.taskInBoard(taskName1, taskName2);
 });
 
-When(/^user creates tasks in the following order$/, function (dataTable) {
+When(/^user creates tasks in the following order$/, {timeout: 60000}, function (dataTable) {
   let tasks = dataTable.hashes();
   for(let i = 0; i < tasks.length; i++) {
     BoardPage.createTaskButton(1).click();
     TaskPage.setTaskNameInput(tasks[i].COMPLETE);
     browser.keys(SystemInteractions.ENTER_KEY_PRESS);
-    TaskPage.taskTitle.waitForExist(3000);
-    TaskPage.taskTitle.moveTo();
+    TaskPage.getTaskTitle(tasks[i].COMPLETE).moveTo();
     TaskPage.closeTaskIcon.click();
   }
   Utils.tasksFromTable(tasks, 'TO_DO');
@@ -74,7 +75,7 @@ When(/^user adds description to a given card$/, function (dataTable) {
     TaskPage.getTaskTitle(elm.CARD).click();
     TaskPage.taskDescription.click();
     TaskPage.setTaskDescription(elm.DESCRIPTION);
-    TaskPage.closeWindows.click();
+    TaskPage.closeTaskModal.click();
   });
 });
 
