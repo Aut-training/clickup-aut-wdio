@@ -37,6 +37,12 @@ class LoginAssert {
     );
   }
 
+  assertTaskInList(title) {
+    assert.isTrue(
+      TaskPage.getTaskInList(title).isExisting(),
+      `Task: ${title} was not created.`);
+  }
+
   assertDescription(description) {
     assert.equal(
       TaskPage.modalDescription.getText(),

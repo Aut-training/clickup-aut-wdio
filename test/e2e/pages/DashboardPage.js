@@ -56,6 +56,10 @@ class DashboardPage {
 
   get modalDialog() { return $('.cu-modal__dialog'); }
 
+  floatingButton(index) { return $(`//cu-float-button-item[div/div[contains(text(), "${index}")]]`); }
+
+  dashboardTab(tabName) { return $(`//a/div[contains(., "${tabName}")]`); }
+
   setNewListInput(listName) {
     this.newListInput.setValue(listName);
   }
