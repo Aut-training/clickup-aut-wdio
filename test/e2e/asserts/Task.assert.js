@@ -49,6 +49,13 @@ class LoginAssert {
       description
     );
   }
+
+  toastMessage(message) {
+    assert.equal(
+      DashboardPage.toastText.getText(),
+      message
+    );
+  }
 }
 
 module.exports = new LoginAssert();

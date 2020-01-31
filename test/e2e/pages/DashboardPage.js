@@ -56,6 +56,8 @@ class DashboardPage {
 
   get modalDialog() { return $('.cu-modal__dialog'); }
 
+  get toastText() { return $('.toast__name-link-text'); }
+
   floatingButton(index) { return $(`//cu-float-button-item[div/div[contains(text(), "${index}")]]`); }
 
   dashboardTab(tabName) { return $(`//a/div[contains(., "${tabName}")]`); }
