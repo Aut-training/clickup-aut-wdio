@@ -11,4 +11,5 @@ When(/^user removes "([^"]*)"$/, function (taskName) {
 
 Then(/^user should not see "([^"]*)" in the list$/, function (taskName) {
   TaskAsserts.toastMessage(taskName);
+  TaskAsserts.taskDoesNotExist(taskName);
 });

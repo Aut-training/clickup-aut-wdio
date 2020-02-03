@@ -56,6 +56,13 @@ class LoginAssert {
       message
     );
   }
+
+  taskDoesNotExist(title) {
+    assert.isNotTrue(
+      TaskPage.getTaskTitle(title).isExisting(),
+      `Task: ${title} was not deleted.`);
+  }
+
 }
 
 module.exports = new LoginAssert();
