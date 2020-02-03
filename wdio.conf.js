@@ -22,7 +22,7 @@ exports.config = {
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
   specs: [
-    './test/e2e/**/list.feature'
+    './test/e2e/**/*.feature'
   ],
   cucumberOpts: {
     require: [
