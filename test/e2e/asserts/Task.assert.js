@@ -37,12 +37,32 @@ class LoginAssert {
     );
   }
 
+  assertTaskInList(title) {
+    assert.isTrue(
+      TaskPage.getTaskInList(title).isExisting(),
+      `Task: ${title} was not created.`);
+  }
+
   assertDescription(description) {
     assert.equal(
       TaskPage.modalDescription.getText(),
       description
     );
   }
+
+  toastMessage(message) {
+    assert.equal(
+      DashboardPage.toastText.getText(),
+      message
+    );
+  }
+
+  taskDoesNotExist(title) {
+    assert.isNotTrue(
+      TaskPage.getTaskTitle(title).isExisting(),
+      `Task: ${title} was not deleted.`);
+  }
+
 }
 
 module.exports = new LoginAssert();

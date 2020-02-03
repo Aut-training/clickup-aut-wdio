@@ -30,6 +30,8 @@ class TaskPage {
 
   get modalDescription() { return $('.notranslate > .ql-editor > div'); }
 
+  get saveTaskButton() { return $('//div[contains(text(), \'Save\')]'); }
+
   floatingTaskStatus(status) {
     return $(`//div[@class='status-list__status'][contains(text(), '${status}')]`);
   }
