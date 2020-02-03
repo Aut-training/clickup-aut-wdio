@@ -39,7 +39,7 @@ When(/^the user creates a new list "([^"]*)"$/, function (nameList) {
 When(/^the user creates a new folder "([^"]*)"$/, function (nameList) {
   BoardPage.templateLink.waitForExist(3000);
   BoardPage.templateLink.click();  
-  BoardPage.newFolderTab.waitForClickable(6000);
+  browser.pause(1000);
   BoardPage.newFolderTab.click();
   BoardPage.setFolderInput(nameList);
   browser.keys(SystemInteractions.ENTER_KEY_PRESS);
@@ -49,6 +49,6 @@ Then(/^"([^"]*)" list should be created$/, function (nameList) {
   ListAssert.assertListCreation(nameList);  
 });
 
-Then(/^"([^"]*)" list should be created within the folder$/, function (nameList) {   
+Then(/^"([^"]*)" list should be created within the folder List-within-folder$/, function (nameList) {   
   ListAssert.assertListCreation(nameList);
 });
