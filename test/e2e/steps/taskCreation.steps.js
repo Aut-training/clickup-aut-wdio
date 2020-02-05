@@ -92,3 +92,4 @@ Then(/^the following tasks should be visible$/, function (dataTable) {
   let tasks = dataTable.raw();
   tasks.forEach(elm => TaskAsserts.assertTaskExist(elm));
 });
+
