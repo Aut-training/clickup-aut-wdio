@@ -62,6 +62,16 @@ class DashboardPage {
 
   dashboardTab(tabName) { return $(`//a/div[contains(., "${tabName}")]`); }
 
+  get seetingIcon() { return $('[icon = "cu2-cog"]'); }
+
+  get layoutStyleIcon() { return $('[icon = cu2-layout-style]'); }
+
+  get cleanStyle() { return $('//div[contains(text(), \'Clean, separated\')] '); }
+
+  get doneButton() { return $('.cu-btn'); }
+
+  get favoriteIcon() { return $('.cu2-spaces-bar__compact-btn_favorites'); }
+  
   setNewListInput(listName) {
     this.newListInput.setValue(listName);
   }
