@@ -19,4 +19,3 @@ Feature: Manage a space
     When the user clicks on Delete option
     And the user confirms to remove the space filling-up "delete"
     Then space should not be displayed
-    

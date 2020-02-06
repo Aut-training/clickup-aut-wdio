@@ -75,22 +75,26 @@ class DashboardPage {
   get renameIcon() { return $('[cutooltip = Rename]'); }
 
   get settingSpaceIcon() { return $('.cu-dropdown__toggle > .nav-menu__toggle'); }
-  
+
   get settingSpacePanelIcon() { return $('.nav-menu-item__icon_settings'); }
-  
+
   get deletePanelOption() { return $('[icon = remove]'); }
 
   get addSpaceIcon() { return $('.cu2-project-list-bar__add-icon'); }
 
   get nextButon() { return $('.cu-btn_m'); }
-  
+
   setNewListInput(listName) {
     this.newListInput.setValue(listName);
   }
 
   setTaskName(taskName) {
     this.taskInput.setValue(taskName);
-  }  
+  }
+
+  setFolderInput(listName) {
+    this.folderNameInput.setValue(listName);
+  }
 }
 
 module.exports = new DashboardPage();
