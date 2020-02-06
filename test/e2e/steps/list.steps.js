@@ -45,6 +45,18 @@ When(/^the user creates a new folder "([^"]*)"$/, function (nameList) {
   browser.keys(SystemInteractions.ENTER_KEY_PRESS);
 });
 
+When(/^the user clicks on Rename option$/, {timeout: 60000}, function () {
+  DashboardPage.listSettingsButton.moveTo();
+  DashboardPage.listSettingsButton.click();
+  DashboardPage.renameIcon.click();   
+});
+
+When(/^the user fills-up the new name of the list with "([^"]*)"$/, {timeout: 60000}, function (nameList) {
+  browser.keys([SystemInteractions.CONTROL_KEY_PRESS, 'a']);
+  browser.keys(nameList);
+  browser.keys([SystemInteractions.ENTER_KEY_PRESS]);
+});
+
 Then(/^"([^"]*)" list should be created$/, function (nameList) {
   ListAssert.assertListCreation(nameList);  
 });
