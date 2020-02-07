@@ -54,9 +54,9 @@ When(/^the user creates a new space: "([^"]*)"$/, function (nameSpace) {
   }
 });
 
-Then(/^"([^"]*)" space should be displayed$/, function (nameList) {
+Then(/^"([^"]*)" space should be displayed$/, function (nameSpace) {
   DashboardPage.sidebarHeader.waitForClickable(3000);
-  SpaceAssert.assertUpdateName(nameList);
+  SpaceAssert.assertUpdateName(nameSpace);
 });
 
 Then(/^space should not be displayed$/, function () {
