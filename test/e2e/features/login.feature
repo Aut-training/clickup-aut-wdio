@@ -5,6 +5,6 @@ Feature: Login
     Given user navigates to "/login"
     When user fills the fields with the following information
       | mail                  | password     |
-      | nexefeb197@4tmail.com | 1234Qwert    |
+      | kebose7552@eigoemail.com | 1234Qwert    |
       | invalid@gmail.com     | demoPassword |
     Then user should be redirected to ClickUp's dashboard
