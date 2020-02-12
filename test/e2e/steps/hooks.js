@@ -26,3 +26,11 @@ After('@deleteList', function () {
   DashboardPage.confirmDeleteButton.waitForClickable(5000);
   DashboardPage.confirmDeleteButton.click();
 });
+
+After('@deleteFolder', function () {
+  DashboardPage.folderSettingsButton.moveTo();
+  DashboardPage.folderSettingsButton.click();
+  DashboardPage.folderDeleteButton.click();
+  DashboardPage.confirmDeleteButton.waitForClickable(5000);
+  DashboardPage.confirmDeleteButton.click();
+});
