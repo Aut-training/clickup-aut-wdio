@@ -9,6 +9,7 @@ Before('@loginHook', function () {
   LoginPage.setEmailInput(Context.login.user.email);
   LoginPage.setPasswordInput(Context.login.user.password);
   LoginPage.submitButton.click();
+  DashboardPage.addListButton.waitForExist(5000);
 });
 
 Before('@createList', function () {
