@@ -1,7 +1,6 @@
 const assert = require('chai').assert;
 const TaskPage = require('../pages/TaskPage');
 const DashboardPage = require('../pages/DashboardPage');
-//const SystemLabels = require('../constants/SystemLabels.constant');
 const SystemMessages = require('../constants/SystemMessages.constatnt');
 const BoardPage = require('../pages/BoardPage');
 
