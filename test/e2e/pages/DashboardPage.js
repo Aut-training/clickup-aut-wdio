@@ -84,6 +84,10 @@ class DashboardPage {
 
   get nextButon() { return $('.cu-btn_m'); }
 
+  get folderSettingsButton() { return $('cu-category-menu'); }
+
+  get folderDeleteButton() { return $('a[cutooltip="Delete"]'); }
+
   setNewListInput(listName) {
     this.newListInput.setValue(listName);
   }

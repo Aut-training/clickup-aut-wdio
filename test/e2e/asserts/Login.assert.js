@@ -1,26 +1,24 @@
 const assert = require('chai').assert;
 const LoginPage = require('../pages/LoginPage');
 const DashboardPage = require('../pages/DashboardPage');
-const SystemMessages = require('../constants/SystemMessages.constatnt');
-const SystemLabels = require('../constants/SystemLabels.constant');
 
 class LoginAssert {
-  assertPasswordError() {
+  assertPasswordError(passwordErrorMessage) {
     assert.strictEqual(
       LoginPage.errorMessage.getText(),
-      SystemMessages.PASSWORD_ERROR_MESSAGE);
+      passwordErrorMessage);
   }
 
-  assertEmailError() {
+  assertEmailError(emailErrorMessage) {
     assert.strictEqual(
       LoginPage.errorMessage.getText(),
-      SystemMessages.EMAIL_ERROR_MESSAGE);
+      emailErrorMessage);
   }
 
-  assertLogin() {
+  assertLogin(space) {
     assert.strictEqual(
       DashboardPage.sidebarHeader.getText(),
-      SystemLabels.SIDENAV_HEADER);
+      space);
   }
 }
 

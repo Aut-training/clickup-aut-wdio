@@ -3,7 +3,9 @@ const StyleAssert = require('../asserts/Style.assert');
 const { When, Then } = require('cucumber');
 
 When(/^the user enters to Size-Style panel$/, function () {
+  DashboardPage.settingIcon.moveTo();
   DashboardPage.settingIcon.click();
+  DashboardPage.layoutStyleIcon.moveTo();
   DashboardPage.layoutStyleIcon.click();
 });
 

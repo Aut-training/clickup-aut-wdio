@@ -22,6 +22,7 @@ Feature: List creation
     And the user fills-up the new name of the list with "Updated List"
     Then "Updated List" list should be created
 
+  @deleteFolder
   Scenario: The user creates a list from creation of a folder
     Given the user is at Dashboard page
     When the user creates a new folder "List-within-folder"
