@@ -4,7 +4,9 @@
   "description": "Clickup automation",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/wdio wdio.conf.js"
+    "test": "./node_modules/.bin/wdio wdio.conf.js",
+    "start-edgedriver": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command Start-Process \"msedgedriver.exe\" -WindowStyle Hidden",
+    "stop-edgedriver": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command taskkill /IM msedgedriver.exe"
   },
   "repository": {
     "type": "git",
