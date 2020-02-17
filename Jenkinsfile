@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Reports') {
             steps {
-                echo 'Reporting....'
+                bat 'npm run test-report'
             }
         }
     }

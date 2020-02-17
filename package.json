@@ -6,7 +6,8 @@
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js",
     "start-edgedriver": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command Start-Process \"msedgedriver.exe\" -WindowStyle Hidden",
-    "stop-edgedriver": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command taskkill /IM msedgedriver.exe"
+    "stop-edgedriver": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command taskkill /IM msedgedriver.exe",
+    "test-report": "allure generate ./allure-results && allure open"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/Aut-training/clickup-aut-wdio#readme",
   "devDependencies": {
+    "@wdio/allure-reporter": "^5.18.6",
     "@wdio/cli": "^5.16.15",
     "@wdio/cucumber-framework": "^5.16.15",
     "@wdio/firefox-profile-service": "^5.16.11",
