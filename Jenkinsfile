@@ -10,7 +10,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'npm test'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    bat 'npm test'
+                }
             }
         }
         stage('Reports') {
