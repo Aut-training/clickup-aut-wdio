@@ -17,7 +17,15 @@ pipeline {
         }
         stage('Reports') {
             steps {
-                bat 'npm run test-report'
+                script {
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'allure-results']]
+                    ])
+                }
             }
         }
     }
