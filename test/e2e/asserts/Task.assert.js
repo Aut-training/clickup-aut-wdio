@@ -1,7 +1,6 @@
 const assert = require('chai').assert;
 const TaskPage = require('../pages/TaskPage');
 const DashboardPage = require('../pages/DashboardPage');
-const SystemMessages = require('../constants/SystemMessages');
 const BoardPage = require('../pages/BoardPage');
 
 class LoginAssert {
@@ -15,12 +14,6 @@ class LoginAssert {
     BoardPage.completeDoBoardTask.waitForExist(3000);
     assert.equal(BoardPage.toDoTaskTitle.getText(), taskName1);
     assert.equal(BoardPage.completeTaskTitle.getText(), taskName2);
-  }
-
-  confirmationMessage() {
-    assert.equal(
-      DashboardPage.snackbarMesssage.getText(),
-      SystemMessages.CREATED_TASK_MESSAGE);
   }
 
   assertTaskExist(title) {
