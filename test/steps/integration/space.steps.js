@@ -1,7 +1,7 @@
-const DashboardPage = require('../pages/DashboardPage');
-const SpacePage = require('../pages/SpacePage');
-const SystemInteractions = require('../constants/SystemInteractions');
-const SpaceAssert = require('../asserts/Space.assert');
+const DashboardPage = require('../../pages/DashboardPage');
+const SpacePage = require('../../pages/SpacePage');
+const SystemInteractions = require('../../constants/SystemInteractions');
+const SpaceAssert = require('../../asserts/Space.assert');
 const { When, Then } = require('cucumber');
 let spaceName;
 

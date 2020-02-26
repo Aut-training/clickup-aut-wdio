@@ -1,6 +1,6 @@
-const TaskAsserts = require('../asserts/Task.assert');
+const TaskAsserts = require('../../asserts/Task.assert');
 const { When, Then } = require('cucumber');
-const TaskPage = require('../pages/TaskPage');
+const TaskPage = require('../../pages/TaskPage');
 
 When(/^user removes "([^"]*)"$/, function (taskName) {
   browser.pause(1000);

@@ -1,11 +1,11 @@
-const BoardPage = require('../pages/BoardPage');
+const BoardPage = require('../../pages/BoardPage');
 const Context = require('../../data/Context');
-const DashboardPage = require('../pages/DashboardPage');
-const LoginPage = require('../pages/LoginPage');
-const SystemInteractions = require('../constants/SystemInteractions');
-const TaskAsserts = require('../asserts/Task.assert');
-const TaskPage = require('../pages/TaskPage');
-const Utils = require('../common/Utils');
+const DashboardPage = require('../../pages/DashboardPage');
+const LoginPage = require('../../pages/LoginPage');
+const SystemInteractions = require('../../constants/SystemInteractions');
+const TaskAsserts = require('../../asserts/Task.assert');
+const TaskPage = require('../../pages/TaskPage');
+const Utils = require('../../common/Utils');
 const { Given, When, Then } = require('cucumber');
 
 Given(/^user is in the main page$/, function () {

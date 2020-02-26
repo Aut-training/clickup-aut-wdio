@@ -1,5 +1,5 @@
 const axios = require('axios');
-const Context = require('../../data/Context');
+const Context = require('../data/Context');
 
 axios.defaults.headers.common['Authorization'] = 'pk_3019064_BLEAN6XFS8D2A6HN1AOM6U3YM55U28ZF';
 axios.defaults.headers.common['Content-Type'] = 'application/json';

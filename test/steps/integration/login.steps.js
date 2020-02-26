@@ -1,5 +1,5 @@
-const LoginAssert = require('../asserts/Login.assert');
-const LoginPage = require('../pages/LoginPage');
+const LoginAssert = require('../../asserts/Login.assert');
+const LoginPage = require('../../pages/LoginPage');
 const { Given, When, Then } = require('cucumber');
 
 Given(/^user navigates to "([^"]*)"$/, (endpoint) => {

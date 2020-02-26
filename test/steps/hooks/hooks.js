@@ -1,8 +1,8 @@
 const Context = require('../../data/Context');
-const DashboardPage = require('../pages/DashboardPage');
-const LoginPage = require('../pages/LoginPage');
+const DashboardPage = require('../../pages/DashboardPage');
+const LoginPage = require('../../pages/LoginPage');
 var { Before, After } = require('cucumber');
-const Utils = require('../common/Utils');
+const Utils = require('../../common/Utils');
 
 Before('@loginHook', function () {
   LoginPage.open(Context.page.endpoints.login);

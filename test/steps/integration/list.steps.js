@@ -1,9 +1,9 @@
-const BoardPage = require('../pages/BoardPage');
+const BoardPage = require('../../pages/BoardPage');
 const Context = require('../../data/Context');
-const DashboardPage = require('../pages/DashboardPage');
-const LoginPage = require('../pages/LoginPage');
-const SystemInteractions = require('../constants/SystemInteractions');
-const ListAssert = require('../asserts/List.assert');
+const DashboardPage = require('../../pages/DashboardPage');
+const LoginPage = require('../../pages/LoginPage');
+const SystemInteractions = require('../../constants/SystemInteractions');
+const ListAssert = require('../../asserts/List.assert');
 const { Given, When, Then } = require('cucumber');
 
 Given(/^the user is at Dashboard page$/, function () {
