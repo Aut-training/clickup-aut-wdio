@@ -61,7 +61,6 @@ class LoginAssert {
       TaskPage.getTaskTitle(title).isExisting(),
       `Task: ${title} was not deleted.`);
   }
-
 }
 
 module.exports = new LoginAssert();
