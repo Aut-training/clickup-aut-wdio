@@ -4,7 +4,11 @@
   "description": "Clickup automation",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/wdio wdio.conf.js"
+    "test": "./node_modules/.bin/wdio wdio.conf.js",
+    "start-edgedriver": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command Start-Process \"msedgedriver.exe\" -WindowStyle Hidden",
+    "stop-edgedriver": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command taskkill /IM msedgedriver.exe",
+    "test-report": "allure generate ./allure-results && allure open",
+    "config-runner": "./node_modules/.bin/wdio config"
   },
   "repository": {
     "type": "git",
@@ -18,12 +22,15 @@
   },
   "homepage": "https://github.com/Aut-training/clickup-aut-wdio#readme",
   "devDependencies": {
+    "@wdio/allure-reporter": "^5.18.6",
     "@wdio/cli": "^5.16.15",
     "@wdio/cucumber-framework": "^5.16.15",
     "@wdio/spec-reporter": "^5.16.11",
+    "@wdio/sync": "^5.16.15",
     "chromedriver": "^79.0.0",
     "eslint": "^6.7.2",
     "geckodriver": "^1.19.1",
+    "wdio-edgedriver-service": "^1.0.0",
     "wdio-geckodriver-service": "^1.0.3"
   }
 }

@@ -3,8 +3,6 @@ class BoardPage {
 
   get completeDoBoardTask() { return $('//div[@data-status="complete"]/section/cu-dashboard-board-card'); }
 
-  get toDoBoard() { return $('div[data-status="to do"]'); }
-
   get completeDoBoard() { return $('div[data-status="complete"]'); }
 
   get taskTitle() { return $('.cu-panel-board__clickable-name'); }
@@ -24,8 +22,6 @@ class BoardPage {
   get listBySearchInput() { return $('.category-list-input__input'); }
 
   get listNameInSpace() { return $('.cu-nav-section'); }
-
-  get listTab() { return $('div=List'); }
 
   get templateLink() { return $('.lv-empty_link'); }
 
