@@ -8,10 +8,6 @@ class DashboardPage {
 
   get newListInput() { return $('.nav-section-maker__input'); }
 
-  get listHeader() { return $('.cu-list-group__name').$('.cu-editable'); }
-
-  get newTaskButton() { return $('//div[@class="cu-list-group__add ng-star-inserted"]'); }
-
   get taskInput() { return $('.cu-task-row-new__input'); }
 
   get saveTaskButton() { return $('.cu-task-row-new__button.ng-star-inserted'); }
@@ -28,27 +24,15 @@ class DashboardPage {
 
   get boardTab() { return $('//a/div[contains(., "Board")]'); }
 
-  get taskCard() { return $('.cu-panel-board__clickable-name'); }
-
-  get completeColum() { return $('div[data-status="complete"]'); }
-
-  get taskCloseIcon() { return $('.task-close'); }
-
   get addStatusButton() { return $('//div/section[contains(., "Add Status")]'); }
 
   get confirmNewStatus() { return $('//div[contains(text(),\'Save\')]'); }
 
-  get modalText() { return $('.cu-dc__title'); }
-
   get newListIcon() { return $('.cu-dropdown-list-item__icon_new-list'); }
-
-  get nameListInFolder() { return $('.cu-list-group__name'); }
 
   get listNameInSpace() { return $('.cu-nav-section'); }
 
   get folderNameInput() { return $('.cu-form__input'); }
-
-  get openFolderIcon() { return $('.nav-category__toggle'); }
 
   get floatingMenuButton() { return $('.cu-float-button__toggle'); }
 
@@ -59,8 +43,6 @@ class DashboardPage {
   get toastText() { return $('.toast__name-link-text'); }
 
   floatingButton(index) { return $(`//cu-float-button-item[div/div[contains(text(), "${index}")]]`); }
-
-  dashboardTab(tabName) { return $(`//a/div[contains(., "${tabName}")]`); }
 
   get settingIcon() { return $('[icon = "cu2-cog"]'); }
 

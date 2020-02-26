@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const TaskPage = require('../pages/TaskPage');
 const DashboardPage = require('../pages/DashboardPage');
-const SystemMessages = require('../constants/SystemMessages.constatnt');
+const SystemMessages = require('../constants/SystemMessages');
 const BoardPage = require('../pages/BoardPage');
 
 class LoginAssert {
@@ -61,7 +61,6 @@ class LoginAssert {
       TaskPage.getTaskTitle(title).isExisting(),
       `Task: ${title} was not deleted.`);
   }
-
 }
 
 module.exports = new LoginAssert();

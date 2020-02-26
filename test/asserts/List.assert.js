@@ -6,7 +6,7 @@ class ListAssert {
     assert.strictEqual(
       DashboardPage.listNameInSpace.getText(),
       nameList);
-  } 
+  }
 }
 
 module.exports = new ListAssert();
