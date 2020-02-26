@@ -1,10 +1,10 @@
-const TaskAsserts = require('../asserts/Task.assert');
+const TaskAsserts = require('../../asserts/Task.assert');
 const Context = require('../../data/Context');
-const LoginPage = require('../pages/LoginPage');
+const LoginPage = require('../../pages/LoginPage');
 const { Given, When, Then } = require('cucumber');
-const TaskPage = require('../pages/TaskPage');
-const DashboardPage = require('../pages/DashboardPage');
-const SystemInteractions = require('../constants/SystemInteractions');
+const TaskPage = require('../../pages/TaskPage');
+const DashboardPage = require('../../pages/DashboardPage');
+const SystemInteractions = require('../../constants/SystemInteractions');
 
 Given(/^user is in home page$/, function () {
   LoginPage.open(Context.page.endpoints.base);

@@ -1,7 +1,7 @@
 const { When, Then } = require('cucumber');
-const DashboardPage = require('../pages/DashboardPage');
-const TaskPage = require('../pages/TaskPage');
-const TaskAsserts = require('../asserts/Task.assert');
+const DashboardPage = require('../../pages/DashboardPage');
+const TaskPage = require('../../pages/TaskPage');
+const TaskAsserts = require('../../asserts/Task.assert');
 
 When(/^user clicks "([^"]*)" option in the floating button$/, function (option) {
   DashboardPage.listViewHeader.waitForExist();

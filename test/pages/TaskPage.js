@@ -10,7 +10,7 @@ class TaskPage {
 
   get closeTaskModal() { return $('//div[@cutooltip="Close window"]');}
 
-  get taskSettingsButton() { return $('.cu-task-header__control');}
+  get taskSettingsButton() { return $('.cu-task-header__control > .icon-ellipsis');}
 
   get deleteButton() { return $('.nav-menu-item__icon_remove');}
 
