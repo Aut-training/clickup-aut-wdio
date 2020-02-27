@@ -1,4 +1,7 @@
 const Context = require('./test/data/Context');
+var date = new Date();
+var logFolder = date.getFullYear() + '-' +(date.getMonth() + 1) + '-' +
+  date.getDate() + ' ' + date.getHours() + '´' + date.getMinutes() + '´';
 
 exports.config = {
   //
@@ -89,6 +92,7 @@ exports.config = {
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
   logLevel: 'info',
+  outputDir: `./logs/${logFolder}`,
   //
   // Set specific log levels per logger
   // loggers:
